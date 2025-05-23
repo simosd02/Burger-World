@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger World - Contact & Info</title>
+    <style>
+        /* Style global */
+        body{
+background-color: #f8edd4;
+  margin: 0;
+  padding: 0;
+}
+#logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 170px; /* Adjust size here */
+  height: 170px;
+}
+header {
+  position: relative;
+  padding: 10px;
+}
+.container1 {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+/* From Uiverse.io by CristianMontoya98 */ 
+.btn {
+ width: 8.0em;
+ height: 4.5em;
+ margin: 0.5em;
+ background: #382b17;
+ color: #e39a16;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+
+}
+
+button:hover {
+ color: #382b17;
+}
+
+button:after {
+ content: "";
+ background: #e39a16;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+#cont{
+     background-color: #382b17;
+}
+
+.intro {
+  background-color: #ffd271;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.intro h2 {
+  color: #381904;
+  margin-bottom: 15px;
+}
+
+.promo {
+  background-color: #a88d61;
+  padding: 10px;
+  border-left: 5px solid #ff9800;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.menu-btn {
+  display:flex;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff6600;
+  color: #381904;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  font-size: 32px;
+}
+.menu-btn1 {
+  display:flex;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #381904;
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  font-size: 32px;
+}
+#map{
+    border-radius: 15px;
+}
+#footer{
+    background-color: #5e5c5a;
+  border-radius: 12px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+    </style>
+</head>
+<body>
+     <header>
+         <img id="logo" src="logo.jpg" alt="">
+         <div class="container1">
+             <div><a href="Home.html"class="item"><button class="btn">Home</button></a></div>
+             <div><a href="menu.html"class="item"><button class="btn">Menu</button></a></div>
+             <div><a href="service.html"class="item"><button class="btn">Service</button></a></div>
+             <div><a href="contact&info.html"class="item"><button class="btn">Contact & Info</button></a></div>
+             <div><a href="miniblog.html"class="item"><button class="btn">Burger World Ecosystem</button></a></div>
+         </div>
+     </header>
+ <div class="intro">
+    <center>
+        <div>
+            <div>
+                <h5 class="menu-btn">Contact & Info</h5>
+            </div>
+      
+                <a>
+                    <i></i>
+                    <p  class="menu-btn1">Location</p>
+                    <img src="map.jpg" alt="" id="map">
+                </a>
+                <a>
+                    <i></i>
+                    <p  class="menu-btn1">For Calling</p>
+                    <p> <b>+212 6 87 60 93 58</b></p>
+                    <p> <b>+212 6 25 34 08 44</b></p>
+                </a>
+
+                <a>
+                      <p  class="menu-btn1">For Texting</p>
+                    <p><b>saad.agaraijjou@gmail.com</b></p>
+                </a>
+            </div>
+            <div>
+                <p  class="menu-btn1">Opening Hours</p>
+                <p><b>Everyday</b></p>
+                <p> 1:00 pm - 5:00 pm</p>
+                <p> 5:00 pm - 12:00 am</p>
+            </div>
+        </div>  
+    </div>
+    </center>
+    <div id="footer">
+       <center>
+         <p>© 2025 Burger World | Mentions légales | Politique de confidentialité </p>
+       </center>
+    </div>
+</body>
+</html>

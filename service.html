@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burger World - Service</title>
+  <style>
+    body {
+      background-color: #f8edd4;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #Logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 170px;
+      height: 170px;
+    }
+
+    header {
+      position: relative;
+      padding: 10px;
+    }
+
+    .container1 {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      width: 8em;
+      height: 4.5em;
+      margin: 0.5em;
+      background: #382b17;
+      color: #e39a16;
+      border: none;
+      border-radius: 0.625em;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    button:hover {
+      color: #382b17;
+    }
+
+    button:after {
+      content: "";
+      background: #e39a16;
+      position: absolute;
+      z-index: -1;
+      left: -20%;
+      right: -20%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(-45deg) scale(0, 1);
+      transition: all 0.5s;
+    }
+
+    button:hover:after {
+      transform: skewX(-45deg) scale(1, 1);
+      transition: all 0.5s;
+    }
+
+    .section-book {
+      padding: 4em 1em;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section-book__container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #e39a16;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-book__h2 {
+      font-size: 3rem;
+      margin-bottom: 1em;
+      color: #381904;
+      text-align: center;
+      font-family: "Dancing Script", cursive;
+    }
+
+    .section-book__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .section-book__input {
+      height: 50px;
+      width: 85%;
+      border: 1px solid #222831;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    .button {
+      padding: 0.5em 1.5em;
+      background-color: #381904;
+      border: none;
+      border-radius: 45px;
+      color: #e39a16;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #footer {
+      background-color: #5e5c5a;
+      border-radius: 12px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      color: white;
+      line-height: 1.6;
+      text-align: center;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img id="Logo" src="logo.jpg" alt="Logo" />
+    <div class="container1">
+      <div><a href="Home.html"><button class="btn">Home</button></a></div>
+      <div><a href="menu.html"><button class="btn">Menu</button></a></div>
+      <div><a href="service.html"><button class="btn">Service</button></a></div>
+      <div><a href="contact&info.html"><button class="btn">Contact & Info</button></a></div>
+      <div><a href="miniblog.html"class="item"><button class="btn">Burger World Ecosystem</button></a></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-book" id="book">
+      <div class="section-book__container">
+        <h2 class="section-book__h2">Book A Table</h2>
+        <form action="#" class="section-book__form" id="form-book">
+          <input name="full_name" type="text" class="section-book__input" placeholder="Your Name" required />
+          <input name="phone" type="text" class="section-book__input" placeholder="Phone Number" required />
+          <input name="email" type="email" class="section-book__input" placeholder="Your Email" required />
+          <select name="persons" class="section-book__input" required>
+            <option value="" disabled selected>How many people?</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <input type="date" class="section-book__input" required />
+          <input type="submit" value="CHECK AVAILABILITY" class="button" id="submit-btn" />
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer">
+    <p>© 2025 Burger World | Mentions légales | Politique de confidentialité</p>
+  </div>
+</body>
+</html>

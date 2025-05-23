@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Mini-Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            margin: 0;
+            color: #007bff;
+        }
+
+        .article p {
+            margin: 10px 0 0;
+        }
+
+        form {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+        #logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 170px; /* Adjust size here */
+  height: 170px;
+}
+.container1 {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+} 
+.btn {
+ width: 8.0em;
+ height: 4.5em;
+ margin: 0.5em;
+ background: #382b17;
+ color: #e39a16;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+#footer {
+      background-color: #5e5c5a;
+      border-radius: 12px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      color: white;
+      line-height: 1.6;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <header>
+         <img id="logo" src="logo.jpg" alt="">
+         <div class="container1">
+             <div><a href="miniblog.html"class="item"><button class="btn">Mon Mini-Blog</button></a></div>
+             <div><a href="portfolio.html"class="item"><button class="btn">Portfolio</button></a></div>
+             <div><a href="recettes.html"class="item"><button class="btn">Recettes</button></a></div>
+             <div><a href="todolist.html"class="item"><button class="btn">Todo List</button></a></div>
+             <div><a href="Home.html"class="item"><button class="btn">Our Burger World</button></a></div>
+         </div>
+     </header><br><br><br>
+    <div class="container">
+        <h1>Burger World Blog</h1>
+        
+        <form id="articleForm">
+            <input type="text" id="titleInput" placeholder="Titre de l'article" required>
+            <textarea id="contentInput" placeholder="Contenu de l'article" rows="4" required></textarea>
+            <button type="submit">Ajouter un article</button>
+        </form>
+
+        <div id="articles"></div>
+    </div>
+    <div id="footer">
+    <p>© 2025 Burger World | Mentions légales | Politique de confidentialité</p>
+  </div>
+
+    <script>
+        const articles = [];
+
+        function displayArticles() {
+            const articlesDiv = document.getElementById('articles');
+            articlesDiv.innerHTML = ''; // Vider le conteneur avant d'afficher les articles
+            articles.forEach((article, index) => {
+                const articleDiv = document.createElement('div');
+                articleDiv.className = 'article';
+                articleDiv.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                    <button onclick="deleteArticle(${index})">Supprimer</button>
+                `;
+                articlesDiv.appendChild(articleDiv);
+            });
+        }
+
+        function addArticle(event) {
+            event.preventDefault(); // Empêcher le rechargement de la page
+            const titleInput = document.getElementById('titleInput');
+            const contentInput = document.getElementById('contentInput');
+
+            const newArticle = {
+                title: titleInput.value,
+                content: contentInput.value
+            };
+
+            articles.push(newArticle);
+            titleInput.value = '';
+            contentInput.value = '';
+            displayArticles();
+        }
+
+        function deleteArticle(index) {
+            articles.splice(index, 1); // Supprimer l'article à l'index donné
+            displayArticles();
+        }
+
+        document.getElementById('articleForm').addEventListener('submit', addArticle);
+    </script>
+</body>
+</html>

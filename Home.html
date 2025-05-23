@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger World - Home</title>
+    <style>
+        /* Style global */
+        body{
+background-color: #f8edd4;
+  margin: 0;
+  padding: 0;
+}
+#logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 170px; /* Adjust size here */
+  height: 170px;
+}
+header {
+  position: relative;
+  padding: 10px;
+}
+.container1 {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+/* From Uiverse.io by CristianMontoya98 */ 
+.btn {
+ width: 8.0em;
+ height: 4.5em;
+ margin: 0.5em;
+ background: #382b17;
+ color: #e39a16;
+ border: none;
+ border-radius: 0.625em;
+ font-size: 20px;
+ font-weight: bold;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+
+}
+
+button:hover {
+ color: #382b17;
+}
+
+button:after {
+ content: "";
+ background: #e39a16;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+#cont{
+     background-color: #382b17;
+}
+
+.intro {
+  background-color: #ffd271;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.intro h2 {
+  color: #381904;
+  margin-bottom: 15px;
+}
+
+.promo {
+  background-color: #ffee07;
+  padding: 10px;
+  border-left: 5px solid #ff9800;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.menu-btn {
+  display:flex;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  font-size: 32px;
+}
+
+.menu-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+#footer{
+    background-color: #5e5c5a;
+  border-radius: 12px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+    </style>
+</head>
+<body>
+     <header>
+         <img id="logo" src="logo.jpg" alt="">
+         <div class="container1">
+             <div><a href="Home.html"class="item"><button class="btn">Home</button></a></div>
+             <div><a href="menu.html"class="item"><button class="btn">Menu</button></a></div>
+             <div><a href="service.html"class="item"><button class="btn">Service</button></a></div>
+             <div><a href="contact&info.html"class="item"><button class="btn">Contact & Info</button></a></div>
+         </div>
+     </header>
+ <div class="intro">
+    <center>
+        <h2>Welcome to Burger World – Casablanca's New Flavor Destination!</h2>
+    </center>
+    <p>We’re excited to announce the grand opening of <strong>Burger World</strong> in the heart of <strong>Casablanca</strong>! 🍔</p>
+    <p>Discover our delicious handcrafted burgers made with fresh ingredients, unique sauces, and unbeatable taste.</p>
+    <p class="promo">🎉 <strong>Opening Promotion:</strong> Get a free drink with every burger for a limited time!</p>
+    <p>Come taste the difference. Fast service, cozy space, and flavors that bring people together.</p>
+    <center>
+        <p><strong>Visit us today and join the Burger World family!</strong></p>
+    </center>
+    <a href="menu.html" class="menu-btn">Go to the Menu</a>
+  </div>
+  <div id="footer">
+       <center>
+         <p>© 2025 Burger World | Mentions légales | Politique de confidentialité </p>
+       </center>
+    </div>
+
+    <script>
+        // Menu mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Affichage des sections
+        function showSection(sectionId) {
+            // Cacher toutes les sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Afficher la section choisie
+            const sectionToShow = document.getElementById(sectionId);
+            sectionToShow.classList.add('active');
+            
+            // Fermer le menu mobile si ouvert
+            navLinks.classList.remove('active');
+            
+            // Remonter en haut de la page
+            window.scrollTo(0, 0);
+        }
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contactForm');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Réinitialiser les messages d'erreur
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Valider chaque champ
+            let isValid = true;
+            
+            // Validation du nom
+            const nameInput = document.getElementById('name');
+            if (!nameInput.checkValidity()) {
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validation de l'email
+            const emailInput = document.getElementById('email');
+            if (!emailInput.checkValidity()) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validation du téléphone (optionnel mais doit être valide si rempli)
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput.value && !phoneInput.checkValidity()) {
+                document.getElementById('phone-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validation du sujet
+            const subjectInput = document.getElementById('subject');
+            if (!subjectInput.checkValidity()) {
+                document.getElementById('subject-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validation du message
+            const messageInput = document.getElementById('message');
+            if (!messageInput.checkValidity()) {
+                document.getElementById('message-error').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Si le formulaire est valide
+            if (isValid) {
+                // Ici, vous pourriez ajouter le code pour envoyer les données au serveur
+                // Pour cet exemple, nous simulons simplement un envoi réussi
+                
+                // Afficher le message de confirmation
+                confirmationMessage.style.display = 'block';
+                
+                // Réinitialiser le formulaire après 3 secondes
+                setTimeout(() => {
+                    contactForm.reset();
+                    confirmationMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Validation en temps réel
+        contactForm.addEventListener('input', function(e) {
+            const input = e.target;
+            const errorId = input.id + '-error';
+            const errorElement = document.getElementById(errorId);
+            
+            if (errorElement) {
+                if (input.checkValidity()) {
+                    errorElement.style.display = 'none';
+                } else {
+                    errorElement.style.display = 'block';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
